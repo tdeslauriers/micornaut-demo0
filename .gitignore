@@ -43,3 +43,4 @@
 
 # Micronaut
 **/dependency-reduced-pom.xml
+**/bin/

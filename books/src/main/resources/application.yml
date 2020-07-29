@@ -1,3 +1,11 @@
 micronaut:
   application:
     name: books
+  server:
+    port: 8082
+consul:
+  client:
+    registration:
+      enabled: true
+    default-zone:
+    - "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"
