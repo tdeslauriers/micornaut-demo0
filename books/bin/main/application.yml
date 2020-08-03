@@ -3,9 +3,29 @@ micronaut:
     name: books
   server:
     port: 8082
+  security:
+    authentication: bearer
+    token:
+      jwt:
+        generator:
+          refresh-token:
+            secret: pleaseChangeThisSecretForANewOne
+      propagation:
+        enabled:
+          true
+        service-id-regex: "books|inventory"
+
 consul:
   client:
     registration:
       enabled: true
     default-zone:
     - "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"
+    
+tracing:
+    zipkin:
+        http:
+            url: http://localhost:9411
+        enabled: true
+        sampler:
+            probability: 1

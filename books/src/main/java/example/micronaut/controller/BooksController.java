@@ -8,7 +8,9 @@ import example.micronaut.model.Book;
 import example.micronaut.repository.BooksRepository;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
+import io.micronaut.security.annotation.Secured;
 
+@Secured("isAuthenticated()")
 @Controller("/api")
 public class BooksController {
 	

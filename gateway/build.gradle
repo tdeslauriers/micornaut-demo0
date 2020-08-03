@@ -21,7 +21,9 @@ dependencies {
     annotationProcessor(platform("io.micronaut:micronaut-bom:$micronautVersion"))
     annotationProcessor("io.micronaut:micronaut-inject-java")
     annotationProcessor("io.micronaut:micronaut-validation")
+    annotationProcessor("io.micronaut.security:micronaut-security-annotations")
     implementation(platform("io.micronaut:micronaut-bom:$micronautVersion"))
+    implementation("io.micronaut.security:micronaut-security-jwt") 
     implementation("io.micronaut:micronaut-inject")
     implementation("io.micronaut:micronaut-validation")
     implementation("io.micronaut:micronaut-runtime")
@@ -35,6 +37,13 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api")
     testImplementation("io.micronaut.test:micronaut-test-junit5")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+    
+    compile "io.micronaut:micronaut-tracing"
+    runtime 'io.zipkin.brave:brave-instrumentation-http'
+    runtime 'io.zipkin.reporter2:zipkin-reporter'
+    compile 'io.opentracing.brave:brave-opentracing'
+    
+    
 }
 
 test.classpath += configurations.developmentOnly

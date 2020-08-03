@@ -18,10 +18,12 @@ configurations {
 }
 
 dependencies {
-    annotationProcessor(platform("io.micronaut:micronaut-bom:$micronautVersion"))
+     annotationProcessor(platform("io.micronaut:micronaut-bom:$micronautVersion"))
     annotationProcessor("io.micronaut:micronaut-inject-java")
     annotationProcessor("io.micronaut:micronaut-validation")
+    annotationProcessor("io.micronaut.security:micronaut-security-annotations")
     implementation(platform("io.micronaut:micronaut-bom:$micronautVersion"))
+    implementation("io.micronaut.security:micronaut-security-jwt") 
     implementation("io.micronaut:micronaut-inject")
     implementation("io.micronaut:micronaut-validation")
     implementation("io.micronaut:micronaut-runtime")

@@ -2,11 +2,11 @@ package example.micronaut.controller;
 
 import example.micronaut.model.Book;
 import io.micronaut.http.HttpResponse;
-import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
-import io.micronaut.http.annotation.Produces;
+import io.micronaut.security.annotation.Secured;
 
+@Secured("isAuthenticated()")
 @Controller("/api")
 public class InventoryController {
 	

@@ -3,6 +3,17 @@ micronaut:
     name: inventory
   server:
     port: 8081
+  security:
+    enabled:
+      true
+    token:
+      jwt:
+        enabled:
+          true
+        signatures:
+          secret:
+            '*':
+              secret: Don'tPutSecretsInConfigFiles!!1111
 consul:
   client:
     registration:
